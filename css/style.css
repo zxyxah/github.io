@@ -1,0 +1,221 @@
+/* *
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body
+{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #001f00;
+}
+body:before
+{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #fff;
+} */
+.snow
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+.snow .snow1
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/snow.png);
+	z-index: 100;
+	mix-blend-mode: screen;
+	animation: animate 2s linear infinite;
+	transform: scale(2);
+}
+.snow .snow2
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/snow.png);
+	z-index: 100;
+	mix-blend-mode: screen;
+	animation: animate 5s linear infinite;
+	transform: scale(1);
+	filter: blur(1px);
+}
+.snow .snow3
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/snow.png);
+	z-index: 100;
+	mix-blend-mode: screen;
+	animation: animate 5s linear infinite;
+	transform: scale(1.5);
+}
+
+.room .world{
+	font-weight: bolder;
+	font-size: 40px;
+	z-index: 5000;
+	color: white;
+}
+
+@keyframes animate
+{
+	0%
+	{
+		background-position: 0 0;
+	}
+	100%
+	{
+		background-position: 0 506px;
+	}
+}
+
+/*最外层容器样式*/
+.wrap {
+	position:relative; 
+	position:absolute; 
+	z-index: 1000;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	width:200px;
+	height:200px;
+	margin:auto;
+	/*改变左右上下,图片方块移动*/
+}
+/*包裹所有容器样式*/
+.cube {
+	z-index: 1000;
+	width:200px;
+	height:200px;
+	margin:0 auto;
+	transform-style:preserve-3d;
+	transform:rotateX(-30deg) rotateY(-80deg);
+	-webkit-animation:rotate 20s infinite;
+	/*匀速*/
+	animation-timing-function:linear;
+}
+@-webkit-keyframes rotate {
+	from {
+	transform:rotateX(0deg) rotateY(0deg);
+}
+to {
+	transform:rotateX(360deg) rotateY(360deg);
+}
+}.cube div {
+	z-index: 1000;
+	position:absolute;
+	width:200px;
+	height:200px;
+	opacity:0.8;
+	transition:all .4s;
+}
+/*定义所有图片样式*/
+.pic {
+	width:200px;
+	height:200px;
+}
+.cube .out_front {
+	transform:rotateY(0deg) translateZ(100px);
+}
+.cube .out_back {
+	transform:translateZ(-100px) rotateY(180deg);
+}
+.cube .out_left {
+	transform:rotateY(90deg) translateZ(100px);
+}
+.cube .out_right {
+	transform:rotateY(-90deg) translateZ(100px);
+}
+.cube .out_top {
+	transform:rotateX(90deg) translateZ(100px);
+}
+.cube .out_bottom {
+	transform:rotateX(-90deg) translateZ(100px);
+}
+/*定义小正方体样式*/
+.cube span {
+	z-index: 1000;
+	display:bloack;
+	width:100px;
+	height:100px;
+	position:absolute;
+	top:50px;
+	left:50px;
+}
+.cube .in_pic {
+	z-index: 1000;
+	width:100px;
+	height:100px;
+}
+.cube .in_front {
+	z-index: 1000;
+	transform:rotateY(0deg) translateZ(50px);
+}
+.cube .in_back {
+	z-index: 1000;
+	transform:translateZ(-50px) rotateY(180deg);
+}
+.cube .in_left {
+	z-index: 1000;
+	transform:rotateY(90deg) translateZ(50px);
+}
+.cube .in_right {
+	z-index: 1000;
+	transform:rotateY(-90deg) translateZ(50px);
+}
+.cube .in_top {
+	z-index: 1000;
+	transform:rotateX(90deg) translateZ(50px);
+}
+.cube .in_bottom {
+	z-index: 1000;
+	transform:rotateX(-90deg) translateZ(50px);
+}
+/*鼠标移入后样式*/
+.cube:hover .out_front {
+	z-index: 1000;
+	transform:rotateY(0deg) translateZ(200px);
+}
+.cube:hover .out_back {
+	z-index: 1000;
+	transform:translateZ(-200px) rotateY(180deg);
+}
+.cube:hover .out_left {
+	z-index: 1000;
+	transform:rotateY(90deg) translateZ(200px);
+}
+.cube:hover .out_right {
+	z-index: 1000;
+	transform:rotateY(-90deg) translateZ(200px);
+}
+.cube:hover .out_top {
+	z-index: 1000;
+	transform:rotateX(90deg) translateZ(200px);
+}
+.cube:hover .out_bottom {
+	z-index: 1000;
+	transform:rotateX(-90deg) translateZ(200px);
+}
